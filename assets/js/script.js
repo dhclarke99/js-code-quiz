@@ -7,7 +7,7 @@ var submitButton = document.querySelector(".submit")
 var restartButton = document.querySelector(".restart")
 var introSect = document.querySelector(".intro")
 var timeEl = document.querySelector(".timer")
-var secondsLeft = 60
+var secondsLeft = 10
 
 
 //listen for start button and reveal first question plus start timer
@@ -30,7 +30,32 @@ startButton.addEventListener("click", function (event) {
     if(secondsLeft === 0) {
       // Stops execution of action at set interval
       clearInterval(timerInterval);
-      // Calls function to create and append image
+      // bring user directly to final prompt "time is up"
+      
+        var q = document.querySelector(".question4")
+        var element = event.target;
+        console.log("click test")
+        if (element.matches(".submit")) {
+    
+            var state = q.getAttribute("data-state");
+    
+    
+            if (state === "hidden") {
+    
+    
+            } if (state === "visible") {
+                q.setAttribute("style", "display: none");
+    
+                q.setAttribute("data-state", "hidden");
+            }
+    
+        }
+        var state = document.querySelector(".question5").getAttribute("data-state")
+        if (state === "hidden") {
+            document.querySelector(".question5").setAttribute("style", "display: block");
+            document.querySelector(".question5").setAttribute("data-state", "visible");
+        }
+
       
     }
 
