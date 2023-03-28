@@ -2,9 +2,8 @@ var startButton = document.querySelector(".start")
 
 var introSect = document.querySelector(".intro")
 
-var questions = document.querySelectorAll(".question")
 
-var sections = document.querySelectorAll("section")
+
 
 
 
@@ -18,15 +17,20 @@ var sections = document.querySelectorAll("section")
            
 
             if (state === "hidden") {
+             
                 
-                introSect.textcontent = "";
             } if (state === "visible") {
                introSect.setAttribute("style", "display: none");
                
                introSect.setAttribute("data-state", "hidden");
             }
 
+        } 
+        var state = document.querySelector(".question1").getAttribute("data-state")
+        if (state === "hidden") {
+            document.querySelector(".question1").setAttribute("style", "display: block")
         }
+       
     })
 
 
