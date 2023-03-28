@@ -7,7 +7,7 @@ var submitButton = document.querySelector(".submit")
 var restartButton = document.querySelector(".restart")
 var introSect = document.querySelector(".intro")
 var timeEl = document.querySelector(".timer")
-var secondsLeft = 10
+var secondsLeft = 5
 
 
 //listen for start button and reveal first question plus start timer
@@ -26,16 +26,23 @@ startButton.addEventListener("click", function (event) {
     timeEl.textContent = secondsLeft + " seconds left.";
     console.log(secondsLeft)
     
-
+    //stop timer if quiz is completed
+    var finish = document.querySelector(".question5")
+    var dataState = finish.getAttribute("style", "display")
+    console.log(dataState)
+    if (dataState === "display: block") {
+        clearInterval(timerInterval);
+    }
+    
     if(secondsLeft === 0) {
       // Stops execution of action at set interval
       clearInterval(timerInterval);
       // bring user directly to final prompt "time is up"
       
-        var q = document.querySelector(".question4")
+        var q = document.querySelectorAll("section")
         var element = event.target;
         console.log("click test")
-        if (element.matches(".submit")) {
+        if (element.matches(".q1Button") || element.matches(".q2Button") || element.matches(".q3Button") || element.matches(".q4Button")){
     
             var state = q.getAttribute("data-state");
     
