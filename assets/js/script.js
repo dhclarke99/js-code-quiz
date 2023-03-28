@@ -1,37 +1,177 @@
 var startButton = document.querySelector(".start")
-
+var q1Button = document.querySelector(".q1")
+var q2Button = document.querySelector(".q2")
+var q3Button = document.querySelector(".q3")
+var q4Button = document.querySelector(".q4")
+var submitButton = document.querySelector(".submit")
+var restartButton = document.querySelector(".restart")
 var introSect = document.querySelector(".intro")
 
 
+//listen for start button and start timer. reveal first question
+startButton.addEventListener("click", function (event) {
+    var element = event.target;
+    console.log("click test")
+    if (element.matches(".start")) {
+
+        var state = introSect.getAttribute("data-state");
 
 
-
-
-
-    startButton.addEventListener("click", function (event) {
-        var element = event.target;
-
-        if (element.matches(".start")) {
-           
-            var state = introSect.getAttribute("data-state");
-           
-
-            if (state === "hidden") {
-             
-                
-            } if (state === "visible") {
-               introSect.setAttribute("style", "display: none");
-               
-               introSect.setAttribute("data-state", "hidden");
-            }
-
-        } 
-        var state = document.querySelector(".question1").getAttribute("data-state")
         if (state === "hidden") {
-            document.querySelector(".question1").setAttribute("style", "display: block")
+
+
+        } if (state === "visible") {
+            introSect.setAttribute("style", "display: none");
+
+            introSect.setAttribute("data-state", "hidden");
         }
-       
-    })
+
+    }
+    var state = document.querySelector(".question1").getAttribute("data-state");
+    if (state === "hidden") {
+        document.querySelector(".question1").setAttribute("style", "display: block");
+        document.querySelector(".question1").setAttribute("data-state", "visible");
+    }
+
+})
+
+
+
+//listen for answer button click and reveal second question
+q1Button.addEventListener("click", function (event) {
+    var q = document.querySelector(".question1")
+    var element = event.target;
+    console.log("click test")
+    if (element.matches(".q1")) {
+
+        var state = q.getAttribute("data-state");
+
+
+        if (state === "hidden") {
+
+
+        } if (state === "visible") {
+            q.setAttribute("style", "display: none");
+
+            q.setAttribute("data-state", "hidden");
+        }
+
+    }
+    var state = document.querySelector(".question2").getAttribute("data-state")
+    if (state === "hidden") {
+        document.querySelector(".question2").setAttribute("style", "display: block");
+        document.querySelector(".question2").setAttribute("data-state", "visible");
+    }
+
+})
+
+q2Button.addEventListener("click", function (event) {
+    var q = document.querySelector(".question2")
+    var element = event.target;
+    console.log("click test")
+    if (element.matches(".q2")) {
+
+        var state = q.getAttribute("data-state");
+
+
+        if (state === "hidden") {
+
+
+        } if (state === "visible") {
+            q.setAttribute("style", "display: none");
+
+            q.setAttribute("data-state", "hidden");
+        }
+
+    }
+    var state = document.querySelector(".question3").getAttribute("data-state")
+    if (state === "hidden") {
+        document.querySelector(".question3").setAttribute("style", "display: block");
+        document.querySelector(".question3").setAttribute("data-state", "visible");
+    }
+
+})
+
+q3Button.addEventListener("click", function (event) {
+    var q = document.querySelector(".question3")
+    var element = event.target;
+    console.log("click test")
+    if (element.matches(".q3")) {
+
+        var state = q.getAttribute("data-state");
+
+
+        if (state === "hidden") {
+
+
+        } if (state === "visible") {
+            q.setAttribute("style", "display: none");
+
+            q.setAttribute("data-state", "hidden");
+        }
+
+    }
+    var state = document.querySelector(".question4").getAttribute("data-state")
+    if (state === "hidden") {
+        document.querySelector(".question4").setAttribute("style", "display: block");
+        document.querySelector(".question4").setAttribute("data-state", "visible");
+    }
+
+})
+
+q4Button.addEventListener("click", function (event) {
+    var q = document.querySelector(".question4")
+    var element = event.target;
+    console.log("click test")
+    if (element.matches(".q4")) {
+
+        var state = q.getAttribute("data-state");
+
+
+        if (state === "hidden") {
+
+
+        } if (state === "visible") {
+            q.setAttribute("style", "display: none");
+
+            q.setAttribute("data-state", "hidden");
+        }
+
+    }
+    var state = document.querySelector(".question5").getAttribute("data-state")
+    if (state === "hidden") {
+        document.querySelector(".question5").setAttribute("style", "display: block");
+        document.querySelector(".question5").setAttribute("data-state", "visible");
+    }
+
+})
+
+submitButton.addEventListener("click", function (event) {
+    var q = document.querySelector(".question5")
+    var element = event.target;
+    console.log("click test")
+    if (element.matches(".submit")) {
+
+        var state = q.getAttribute("data-state");
+
+
+        if (state === "hidden") {
+
+
+        } if (state === "visible") {
+            q.setAttribute("style", "display: none");
+
+            q.setAttribute("data-state", "hidden");
+        }
+
+    }
+    var state = document.querySelector(".question6").getAttribute("data-state")
+    if (state === "hidden") {
+        document.querySelector(".question6").setAttribute("style", "display: block");
+        document.querySelector(".question6").setAttribute("data-state", "visible");
+    }
+
+})
 
 
 //GIVEN I am taking a code quiz
