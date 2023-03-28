@@ -7,7 +7,7 @@ var submitButton = document.querySelector(".submit")
 var restartButton = document.querySelector(".restart")
 var introSect = document.querySelector(".intro")
 var timeEl = document.querySelector(".timer")
-var secondsLeft = 5
+var secondsLeft = 15
 
 
 //listen for start button and reveal first question plus start timer
@@ -19,8 +19,6 @@ startButton.addEventListener("click", function (event) {
         
   // Sets interval in variable
   var timerInterval = setInterval(function() {
-    
-   
   
     secondsLeft--;
     timeEl.textContent = secondsLeft + " seconds left.";
@@ -32,9 +30,11 @@ startButton.addEventListener("click", function (event) {
     console.log(dataState)
     if (dataState === "display: block") {
         clearInterval(timerInterval);
+        //add score as value to final score section in HTML
         var score = secondsLeft;
         console.log(score);
         document.querySelector(".score").textContent = score
+        localStorage.setItem("score", score)
     }
     
     if(secondsLeft === 0) {
