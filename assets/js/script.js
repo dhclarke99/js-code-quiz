@@ -123,7 +123,7 @@ q3Button[i].addEventListener("click", function (event) {
 })}
 
 for (i = 0; i < q4Button.length; i++) {
-q4Button[1].addEventListener("click", function (event) {
+q4Button[i].addEventListener("click", function (event) {
     var q = document.querySelector(".question4")
     var element = event.target;
     console.log("click test")
