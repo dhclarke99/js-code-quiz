@@ -32,6 +32,9 @@ startButton.addEventListener("click", function (event) {
     console.log(dataState)
     if (dataState === "display: block") {
         clearInterval(timerInterval);
+        var score = secondsLeft;
+        console.log(score);
+        document.querySelector(".score").textContent = score
     }
     
     if(secondsLeft === 0) {
