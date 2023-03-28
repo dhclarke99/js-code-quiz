@@ -7,6 +7,7 @@ var submitButton = document.querySelector(".submit")
 var restartButton = document.querySelector(".restart")
 var introSect = document.querySelector(".intro")
 var timeEl = document.querySelector(".timer")
+var secondsLeft = 60
 
 
 //listen for start button and reveal first question plus start timer
@@ -15,12 +16,16 @@ startButton.addEventListener("click", function (event) {
     console.log("click test")
     if (element.matches(".start")) {
 
-        var state = introSect.getAttribute("data-state");
+        
   // Sets interval in variable
   var timerInterval = setInterval(function() {
-    var secondsLeft = 60
+    
+   
+  
     secondsLeft--;
-    timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
+    timeEl.textContent = secondsLeft + " seconds left.";
+    console.log(secondsLeft)
+    
 
     if(secondsLeft === 0) {
       // Stops execution of action at set interval
@@ -30,6 +35,8 @@ startButton.addEventListener("click", function (event) {
     }
 
   }, 1000);
+
+    var state = introSect.getAttribute("data-state");
 
 
         if (state === "hidden") {
