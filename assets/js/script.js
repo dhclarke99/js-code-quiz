@@ -6,15 +6,30 @@ var q4Button = document.querySelectorAll(".q4")
 var submitButton = document.querySelector(".submit")
 var restartButton = document.querySelector(".restart")
 var introSect = document.querySelector(".intro")
+var timeEl = document.querySelector(".timer")
 
 
-//listen for start button and start timer. reveal first question
+//listen for start button and reveal first question plus start timer
 startButton.addEventListener("click", function (event) {
     var element = event.target;
     console.log("click test")
     if (element.matches(".start")) {
 
         var state = introSect.getAttribute("data-state");
+  // Sets interval in variable
+  var timerInterval = setInterval(function() {
+    var secondsLeft = 60
+    secondsLeft--;
+    timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
+
+    if(secondsLeft === 0) {
+      // Stops execution of action at set interval
+      clearInterval(timerInterval);
+      // Calls function to create and append image
+      
+    }
+
+  }, 1000);
 
 
         if (state === "hidden") {
@@ -34,6 +49,9 @@ startButton.addEventListener("click", function (event) {
     }
 
 })
+
+
+
 
 
 
