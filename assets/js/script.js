@@ -1,8 +1,8 @@
 var startButton = document.querySelector(".start")
-var q1Button = document.querySelector(".q1")
-var q2Button = document.querySelector(".q2")
-var q3Button = document.querySelector(".q3")
-var q4Button = document.querySelector(".q4")
+var q1Button = document.querySelectorAll(".q1")
+var q2Button = document.querySelectorAll(".q2")
+var q3Button = document.querySelectorAll(".q3")
+var q4Button = document.querySelectorAll(".q4")
 var submitButton = document.querySelector(".submit")
 var restartButton = document.querySelector(".restart")
 var introSect = document.querySelector(".intro")
@@ -38,7 +38,8 @@ startButton.addEventListener("click", function (event) {
 
 
 //listen for answer button click and reveal second question
-q1Button.addEventListener("click", function (event) {
+for (i = 0; i < q1Button.length; i++) {
+q1Button[i].addEventListener("click", function (event) {
     var q = document.querySelector(".question1")
     var element = event.target;
     console.log("click test")
@@ -63,9 +64,10 @@ q1Button.addEventListener("click", function (event) {
         document.querySelector(".question2").setAttribute("data-state", "visible");
     }
 
-})
+})}
 
-q2Button.addEventListener("click", function (event) {
+for (i = 0; i < q2Button.length; i++) {
+q2Button[i].addEventListener("click", function (event) {
     var q = document.querySelector(".question2")
     var element = event.target;
     console.log("click test")
@@ -90,9 +92,10 @@ q2Button.addEventListener("click", function (event) {
         document.querySelector(".question3").setAttribute("data-state", "visible");
     }
 
-})
+})}
 
-q3Button.addEventListener("click", function (event) {
+for (i = 0; i < q3Button.length; i++) {
+q3Button[i].addEventListener("click", function (event) {
     var q = document.querySelector(".question3")
     var element = event.target;
     console.log("click test")
@@ -117,9 +120,10 @@ q3Button.addEventListener("click", function (event) {
         document.querySelector(".question4").setAttribute("data-state", "visible");
     }
 
-})
+})}
 
-q4Button.addEventListener("click", function (event) {
+for (i = 0; i < q4Button.length; i++) {
+q4Button[1].addEventListener("click", function (event) {
     var q = document.querySelector(".question4")
     var element = event.target;
     console.log("click test")
@@ -144,7 +148,7 @@ q4Button.addEventListener("click", function (event) {
         document.querySelector(".question5").setAttribute("data-state", "visible");
     }
 
-})
+})}
 
 submitButton.addEventListener("click", function (event) {
     var q = document.querySelector(".question5")
