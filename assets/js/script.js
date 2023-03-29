@@ -103,8 +103,24 @@ q1Button[i].addEventListener("click", function (event) {
     var q = document.querySelector(".question1")
     var element = event.target;
     console.log("click test")
-    if (element.matches(".q1")) {
+    if (element.matches(".q1") && !element.matches("#correct-answer")) {
 
+        var state = q.getAttribute("data-state");
+        secondsLeft = secondsLeft - 10;
+        if (state === "hidden") {
+
+
+        } if (state === "visible") {
+            q.setAttribute("style", "display: none");
+
+            q.setAttribute("data-state", "hidden");
+        }
+        var state = document.querySelector(".question2").getAttribute("data-state")
+        if (state === "hidden") {
+            document.querySelector(".question2").setAttribute("style", "display: block");
+            document.querySelector(".question2").setAttribute("data-state", "visible");
+
+    }} else if (element.matches("#correct-answer")){
         var state = q.getAttribute("data-state");
 
 
