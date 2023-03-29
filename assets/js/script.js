@@ -34,6 +34,7 @@ startButton.addEventListener("click", function (event) {
         var score = secondsLeft;
         console.log(score);
         document.querySelector(".score").textContent = score
+
         localStorage.setItem("score", score)
     }
     
@@ -300,6 +301,9 @@ submitButton.addEventListener("click", function (event) {
     if (state === "hidden") {
         document.querySelector(".question6").setAttribute("style", "display: block");
         document.querySelector(".question6").setAttribute("data-state", "visible");
+        var lastScore = localStorage.getItem("score");
+        document.querySelector(".question6").children[1].textContent = lastScore
+        console.log(document.querySelector(".question6").children[1])
     }
 
 })
