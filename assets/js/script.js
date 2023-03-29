@@ -7,9 +7,9 @@ var submitButton = document.querySelector(".submit")
 var restartButton = document.querySelector(".restart")
 var introSect = document.querySelector(".intro")
 var timeEl = document.querySelector(".timer")
-var secondsLeft = 30
+var secondsLeft = 60
 
-
+function startGame() {
 //listen for start button and reveal first question plus start timer
 startButton.addEventListener("click", function (event) {
     var element = event.target;
@@ -304,11 +304,9 @@ submitButton.addEventListener("click", function (event) {
         var lastScore = localStorage.getItem("score");
         document.querySelector(".question6").children[1].textContent = lastScore
         console.log(document.querySelector(".question6").children[1])
-    }
-
-})
-
-
+        
+}})} 
+startGame ()
 //GIVEN I am taking a code quiz
 //WHEN I click the start button
 //THEN a timer starts and I am presented with a question
